@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "autobuilder",
+  "version": "${version}",
+  "name": "AutoBuilder",
+  "description": "Tu dong xay lai ban ve .litematic / .schem: doc file, nhap toa do, tu xoay camera va dat block. GUI 2D sieu nhe.",
+  "authors": [
+    "AutoBuilder"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "vn.autobuilder.AutoBuilderMod"
+    ],
+    "client": [
+      "vn.autobuilder.AutoBuilderClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
