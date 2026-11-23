@@ -15,16 +15,15 @@ public final class InventoryUtil {
 
     /** Slot hotbar dang cam (0..8). */
     public static int currentSlot(ClientPlayerEntity player) {
-        return player.getInventory().selectedSlot;
+        // Yarn 1.21.11: selectedSlot la private, phai dung getter/setter.
+        // (Yarn cu <= 1.21.8: player.getInventory().selectedSlot)
+        return player.getInventory().getSelectedSlot();
     }
 
     public static void setHotbarSlot(ClientPlayerEntity player, int slot) {
         PlayerInventory inv = player.getInventory();
         int s = Math.max(0, Math.min(8, slot));
-        // Yarn 1.21.x: truong public "selectedSlot"
-        inv.selectedSlot = s;
-        // Neu ban Yarn cua ban dung setter thi doi dong tren thanh:
-        // inv.setSelectedSlot(s);
+        inv.setSelectedSlot(s);
     }
 
     public static int findInHotbar(ClientPlayerEntity player, Item item) {
