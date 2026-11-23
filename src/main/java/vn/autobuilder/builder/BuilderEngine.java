@@ -369,7 +369,8 @@ public final class BuilderEngine {
     /* ================= Di chuyen ================= */
 
     private void walkTowards(ClientPlayerEntity player, ClientWorld world, GameOptions options, BlockPos target) {
-        Vec3d feet = player.getPos();
+        // getPos() da doi ten trong Yarn moi -> dung getX/getY/getZ (on dinh)
+        Vec3d feet = new Vec3d(player.getX(), player.getY(), player.getZ());
         double dx = (target.getX() + 0.5D) - feet.x;
         double dz = (target.getZ() + 0.5D) - feet.z;
         double dy = target.getY() - feet.y;
